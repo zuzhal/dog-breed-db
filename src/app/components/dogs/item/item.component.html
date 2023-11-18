@@ -20,7 +20,7 @@
     </div>
     <div class="right-col">
       <div class="description">
-        {{imageDetail.breeds.bred_for}} <!-- Description is not provided in the data model -->
+        {{imageDetail.breeds.bred_for}} <br /> <!-- Description is not provided in the data model -->
         {{imageDetail.breeds.temperament}}
       </div>
       
@@ -31,7 +31,7 @@
         </div>
         <div class="origin">
           <span class="label">Origin</span>
-          <span>{{ imageDetail.breeds.origin }}</span>
+          <span>{{ imageDetail.breeds.origin || 'UNKNOWN' }}</span>
         </div>
       </div>
     
