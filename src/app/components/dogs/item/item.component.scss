@@ -1,0 +1,81 @@
+.breed {
+  display: block;
+
+  border: 1px solid #fff;
+  background-color: #fff;
+
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 37px;
+  padding-bottom: 37px;
+
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+  .header-wrapper {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    height: 45px;
+
+    h3 {
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 15px;
+      cursor: pointer;
+      color: #33b05b;
+      font-weight: 700;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+
+  &.opened {
+    height: 290px;
+
+    button.close {
+      color: #ed006d;
+    }
+  }
+
+  .content-wrapper {
+    margin-top: 38px;
+    display: flex;
+    //justify-content: space-between;
+    gap: 15px;
+
+    .left-col {
+      img {
+        width: 264px;
+        height: 172px;
+        border-radius: 10px;
+      }
+    }
+
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .additional-info {
+        display: inline-flex;
+        justify-content: space-between;
+
+        .label {
+          color: #666a71;
+          font-size: 12px;
+          display: block;
+          width: 100%;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

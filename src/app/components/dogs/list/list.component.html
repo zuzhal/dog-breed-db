@@ -1,0 +1,29 @@
+<ng-container *ngIf="dogService.loading$ | async; else dogList">
+  <h1>Loading...</h1>
+</ng-container>
+
+<ng-template #dogList>
+  <div class="input-wrapper">
+    <label for="bname">Filter by breed name</label>
+    <input
+      [(ngModel)]="searchTerm"
+      type="text"
+      id="bname"
+      name="bname"
+      placeholder="Breed name"
+    />
+  </div>
+
+  <div
+    class="list-container"
+    *ngIf="dogService.dogs$ | async | filterByName : searchTerm as dogs"
+  >
+    <div class="results-number">
+      <span>{{ dogs.length }} results</span>
+    </div>
+
+    <ng-container *ngFor="let dog of dogs; trackBy: trackById">
+      <app-item [dog]="dog"></app-item>
+    </ng-container>
+  </div>
+</ng-template>

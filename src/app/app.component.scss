@@ -1,0 +1,18 @@
+.app-container {
+    margin: auto;
+    width: 70%;
+    
+    .title {
+        text-align: center;
+        margin-bottom: 60px;
+        
+        h1 {
+            font-size: 2em;
+        }
+        
+        p {
+            width: 40%;
+            margin: auto;
+        }
+    }
+}

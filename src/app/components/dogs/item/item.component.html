@@ -1,0 +1,40 @@
+<div class="breed" [class.opened]="isOpen">
+  <div class="header-wrapper">
+    <h3>{{ dog.name }}</h3>
+    <button
+      *ngIf="!isOpen"
+      type="button"
+      (click)="fetchDetail(dog.reference_image_id)"
+    >
+      Show more
+    </button>
+
+    <button *ngIf="isOpen" class="close" type="button" (click)="close()">
+      Close
+    </button>
+  </div>
+
+  <div class="content-wrapper" *ngIf="imageDetail">
+    <div class="left-col">
+      <img [src]="imageDetail.url" alt="breed-img" />
+    </div>
+    <div class="right-col">
+      <div class="description">
+        {{imageDetail.breeds.bred_for}} <!-- Description is not provided in the data model -->
+        {{imageDetail.breeds.temperament}}
+      </div>
+      
+      <div class="additional-info">
+        <div class="lifespan">
+          <span class="label">Lifespan</span>
+          <span>{{ imageDetail.breeds.life_span }}</span>
+        </div>
+        <div class="origin">
+          <span class="label">Origin</span>
+          <span>{{ imageDetail.breeds.origin }}</span>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
